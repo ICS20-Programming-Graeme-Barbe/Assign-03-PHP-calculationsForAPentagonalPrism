@@ -45,7 +45,9 @@
 			Unit of Measurement: <input type="text" name="Unit">
 			<br><br>
 			<!-- Button -->
-			<input type = "submit" name = "enter" value="Calculate">    
+			<a href="#" class="button" type="submit" value="enter">
+				<span>Submit</span>
+			</a>
 			<br><br>
 		<!-- Variables and Calculations -->
 		<?php  
