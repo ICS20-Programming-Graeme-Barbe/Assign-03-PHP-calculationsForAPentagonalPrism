@@ -45,9 +45,7 @@
 			Unit of Measurement: <input type="text" name="Unit">
 			<br><br>
 			<!-- Button -->
-			<a href="#" class="button" type="submit" value="enter">
-				<span>Submit</span>
-			</a>
+			<input type = "submit" name = "enter" value="Submit">    
 			<br><br>
 		<!-- Variables and Calculations -->
 		<?php  
@@ -60,16 +58,16 @@
 				$volume = 1 / 4 * sqrt(5 * (5 + 2 * sqrt(5))) * $sideA ** 2 * $height;
 				$volume = round($volume, 2);
 
-				if ($sideA != "" && $height != "" && units != "") {
-					if ($unit == "mm" or $unit == "cm" or $unit == "dm" or $units == "m" or $unit == "dam" or $unit == "hm" or $unit == "km") {
-					echo "<br><br>The surface area of the pentagonal prism is " . $surfaceArea . " " . $unit . '²';
-					echo "<br><br>The volume of the pentagonal prism is " . $volume . " " . $unit . "³";
-				} else {
-					echo "<br><br>The unit of measurement you chose is not valid. Please enter one of the following: mm, cm, dm, m, dam, hm or km";
-				}	
-			}	else { 
-					echo "<br><br>You need to fill in all the text fields to determine the surface area and volume.";
-			}
+				if ($sideA > 0 && $height > 0 && units != "") {
+					if ($units === "mm" || $units === "cm" || $units === "dm" || $units === "m" || $units === "dam" || $units === "hm" || $units === "km") {
+						echo "<br>The surface area of the pentagonal prism is" . surfaceArea . " " . units . "²";
+						echo "<br>The surface area of the pentagonal prism is" . volume . " " . units . "²";
+					} else {
+						echo "<br>The unit of measurement you chose is not valid. Please enter one of the following: mm, cm, dm, m, dam, hm or km";
+					}
+				}	else {
+					echo "<br>You need to fill in all the text fields to determine the surface area and volume.";
+				}
 			}
 		?>
 	</body>
