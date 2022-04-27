@@ -30,8 +30,8 @@
 		<!-- Title, Info and image -->
 		<center><?php 
 			echo '<center><h1>Surface Area and Volume of a Pentagonal Prism</h1></center>';
-			echo '<img src="./images/diagram.PNG" width="15%"/>';
-			echo '<img src="./images/surfaceArea.PNG" width="22%"/>';
+			echo '<img src="./images/diagram.PNG" width="12%"/>';
+			echo '<br><br><img src="./images/surfaceArea.PNG" width="22%"/>';
 			echo '<img src="./images/volume.PNG" width="18%"/>';
 			echo '<center><p>Formulas for the surface area and volume of a pentagonal prism.</center></p>';
 			echo "<p><center>Fill out the text fields below and determine the surface area and volume of the pentagonal prism. Don't forget to put units!</center></p>"; 
@@ -60,14 +60,16 @@
 				$volume = 1 / 4 * sqrt(5 * (5 + 2 * sqrt(5))) * $sideA ** 2 * $height;
 				$volume = round($volume, 2);
 
-				if ($unit == "mm" or $unit == "cm" or $unit == "dm" or $units == "m" 
-					or $unit == "dam" or $unit == "hm" or $unit == "km") {
+				if ($sideA != "" && $height != "" && units != "") {
+					if ($unit == "mm" or $unit == "cm" or $unit == "dm" or $units == "m" or $unit == "dam" or $unit == "hm" or $unit == "km") {
 					echo "<br><br>The surface area of the pentagonal prism is " . $surfaceArea . " " . $unit . '²';
 					echo "<br><br>The volume of the pentagonal prism is " . $volume . " " . $unit . "³";
 				} else {
-					echo "<br><br>The unit of measurement you chose is not valid. 
-					Please enter one of the following: mm, cm, dm, m, dam, hm or km";
+					echo "<br><br>The unit of measurement you chose is not valid. Please enter one of the following: mm, cm, dm, m, dam, hm or km";
 				}	
+			}	else { 
+					echo "<br><br>You need to fill in all the text fields to determine the surface area and volume.";
+			}
 			}
 		?>
 	</body>
