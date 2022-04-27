@@ -52,16 +52,16 @@
 			if(isset($_POST['enter'])) {  
 				$sideA = $_POST['sideA'];   
 				$height = $_POST['Height']; 
-				$unit = $_POST['Unit'];
+				$units = $_POST['Unit'];
 				$surfaceArea = 5 * $sideA * $height + 1 / 2 * sqrt(5 * (5 + 2 * sqrt(5))) * $sideA ** 2;
 				$surfaceArea = round($surfaceArea, 2);
 				$volume = 1 / 4 * sqrt(5 * (5 + 2 * sqrt(5))) * $sideA ** 2 * $height;
 				$volume = round($volume, 2);
 
 				if ($sideA > 0 && $height > 0 && units != "") {
-					if ($units === "mm" || $units === "cm" || $units === "dm" || $units === "m" || $units === "dam" || $units === "hm" || $units === "km") {
-						echo "<br>The surface area of the pentagonal prism is" . surfaceArea . " " . units . "²";
-						echo "<br>The surface area of the pentagonal prism is" . volume . " " . units . "²";
+					if ($units === "mm" or $units === "cm" or $units === "dm" or $units === "m" or $units === "dam" or $units === "hm" or $units === "km") {
+						echo "<br>The surface area of the pentagonal prism is " . $surfaceArea . " " . $units . "²";
+						echo "<br>The surface area of the pentagonal prism is " . $volume . " " . $units . "²";
 					} else {
 						echo "<br>The unit of measurement you chose is not valid. Please enter one of the following: mm, cm, dm, m, dam, hm or km";
 					}
