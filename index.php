@@ -60,12 +60,15 @@
 
 				if ($sideA > 0 && $height > 0 && units != "") {
 					if ($units === "mm" or $units === "cm" or $units === "dm" or $units === "m" or $units === "dam" or $units === "hm" or $units === "km") {
+						//If everything is correct, output SA and volume
 						echo "<br>The surface area of the pentagonal prism is " . $surfaceArea . " " . $units . "²";
 						echo "<br>The surface area of the pentagonal prism is " . $volume . " " . $units . "²";
 					} else {
+						//Error message if unit of measurement is invalid
 						echo "<br>The unit of measurement you chose is not valid. Please enter one of the following: mm, cm, dm, m, dam, hm or km";
 					}
 				}	else {
+					//Error message if a text field was left blank
 					echo "<br>You need to fill in all the text fields to determine the surface area and volume.";
 				}
 			}
